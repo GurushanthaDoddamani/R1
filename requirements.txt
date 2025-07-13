@@ -1,6 +1,5 @@
 yfinance
 pandas
-email
 ta
 datetime
 tabulate
