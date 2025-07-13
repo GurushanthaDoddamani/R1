@@ -1,7 +1,6 @@
 yfinance
 pandas
-email.mime.text
-email.mime.multipart
+email
 ta
 datetime
 tabulate
