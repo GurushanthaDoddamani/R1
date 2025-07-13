@@ -1,6 +1,5 @@
 yfinance
 pandas
-smtplib
 email.mime.text
 email.mime.multipart
 ta
