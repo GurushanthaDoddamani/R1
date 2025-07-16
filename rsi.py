@@ -6,6 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from ta.momentum import RSIIndicator
 from datetime import datetime
 from tabulate import tabulate
+import time
 
 # --- Config ---
 STOCK_SYMBOL = "INFY.NS"
@@ -35,8 +36,9 @@ if __name__ == "__main__":
   subject = f"RSI Report - {today}"
   # body = f"The EMA for report on {ema_data} on {latest_date}."
   df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv")
+  time.sleep(5)
   html_table = df.to_html(index=False)
-
+  time.sleep(5)  
   html_body = f"""
   <html>
     <body>
