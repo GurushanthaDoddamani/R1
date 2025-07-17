@@ -42,13 +42,13 @@ if __name__ == "__main__":
 #sheet_
 
 # Construct the URL for CSV export
-url = f'https://docs.google.com/spreadsheets/d/{gsheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}'
+  url = f'https://docs.google.com/spreadsheets/d/{gsheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}'
 
 # Read the data into a Pandas DataFrame
-df = pd.read_csv(url)
+  df = pd.read_csv(url)
 
 # Print the DataFrame to verify
-print(df)
+  print(df)
 
   # body = f"The EMA for report on {ema_data} on {latest_date}."
   #df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv")
