@@ -52,8 +52,9 @@ if __name__ == "__main__":
 
   # body = f"The EMA for report on {ema_data} on {latest_date}."
   df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv")
+  sorted_df = df.sort_values(by='RSI')
   time.sleep(5)
-  html_table = df.to_html(index=False)
+  html_table = sorted_df.to_html(index=False)
   time.sleep(5)  
   html_body = f"""
   <html>
