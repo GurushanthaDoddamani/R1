@@ -14,8 +14,8 @@ RSI_PERIOD = 14
 EMAIL_SENDER = "dsgurushantha@gmail.com"
 EMAIL_RECEIVER = "dsgurushanthahuf@gmail.com"
 EMAIL_PASSWORD = "ueerezshqkhjrovh"
-sheet_id = "13l4k-GYe_L1SGabCvI0pcUxnYO_IJdGuye9Z8aQS0AI"
-
+gsheet_id = "13l4k-GYe_L1SGabCvI0pcUxnYO_IJdGuye9Z8aQS0AI"
+sheet_name = 'Final List for RSI'
 
 # --- Send Email ---
 def send_email(subject, body):
@@ -34,8 +34,24 @@ def send_email(subject, body):
 if __name__ == "__main__":
   today = datetime.today().strftime("%Y-%m-%d")
   subject = f"RSI Report - {today}"
+
+#import pandas as pd
+
+# Replace with your actual Sheet ID and Sheet Name
+#gsheet_id = '1Ts0kxeRk2MW6FsgZE4e9sG8XDxKSpl7VjCfgbct0n4g'
+#sheet_
+
+# Construct the URL for CSV export
+url = f'https://docs.google.com/spreadsheets/d/{gsheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}'
+
+# Read the data into a Pandas DataFrame
+df = pd.read_csv(url)
+
+# Print the DataFrame to verify
+print(df)
+
   # body = f"The EMA for report on {ema_data} on {latest_date}."
-  df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv")
+  #df = pd.read_csv(f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv")
   time.sleep(5)
   html_table = df.to_html(index=False)
   time.sleep(5)  
